@@ -1,64 +1,49 @@
-#calculates and displays travel expense by using input commmand
-#08/26/2023
-# CTI-110 P1HW2 - Travel Expense
-#Julian Carr
+# CTI-110
+# P2HW2 - List
+# Julian Carr
+# 09/19/2023
+# This program allows the user to input grades for 6 modules then puts them in a list
+# then gives back minimum grade, maximum grade, sum of the grades, and the grades  
+# average in the list
 
-#ask user to enter budget
-print("Please enter your budget: ", end='') 
-b = int(input())
-print()
+# Asking user to input their grades for each module
+print("Enter grade for Module 1: ", end='')
+mod1 = float(input())
 
-#Ask user for the destination
-print("Next enter your destination: ", end='')  
-dest = input()
-print()
+print("Enter grade for Module 2: ", end='')
+mod2 = float(input())
 
-# ask user how they will spend on gas
-print("How much is gas going to cost you? ", end='')
-gas = int(input())
-print()
+print("Enter grade for Module 3: ", end='')
+mod3 = float(input())
 
-#ask user how much there hotel will cost
-print("how much will your hotel/hotels cost you? ", end='')
-h = int(input())
-print()
+print("Enter grade for Module 4: ", end='')
+mod4 = float(input())
 
-#finally ask how much food will cost them
-print("Lastly, how much will food cost you? ", end='')
-food = int(input())
-print()
-print()
+print("Enter grade for Module 5: ", end='')
+mod5 = float(input())
 
+print("Enter grade for Module 6: ", end='')
+mod6 = float(input())
 
-#Seperate the categories
-print("----------------TRAVEL EXPENSES----------------")
+# inputing all the modules into a list
+module_grades = [mod1,mod2,mod3,mod4,mod5,mod6]
 
+# A variable to provide the sum of all the grades
+# Also to set up for the average
+total = sum(module_grades)
 
-#return expenses
-print("location:\t\t", dest)
+print("------------Results------------")
+# Provides the minimum from the list by using the min function
+print("Your Lowest Grade:\t\t", min(module_grades))
 
+# Provides the maximum from the list by using the max function
+print("Your Highest Grade:\t\t", max(module_grades))
 
-print("intial budget:\t", b)
+# Uses the total variable which holds the sum function and then adds all the grades
+# thats been input into each module
+print("The Sum of Your Grades:\t", total)
 
-
-#expense from the gas quetsion
-print("Fuel cost:\t\t ", end='')
-print(gas)
-
-
-#expense from the hotels question
-print("Hotels expense:\t ", end='')
-print(h)
-
-
-#expense from the food question
-print("Food expense:\t ", end='')
-print(food)
-print("-----------------------------------------------")
-
-#Subtract Gas,hotel, and food from intial budget to get remaining balance
-r = b - gas - h - food
-print("Remaing Balance: ", end='')  
-print(r)
-
-
+# variable used to learn the average  of all the grades in the list
+AVG = total / len(module_grades)
+print(f"Your Average:\t\t\t {AVG:.2f}")
+print("-------------------------------")
